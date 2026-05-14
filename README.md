@@ -4,7 +4,7 @@
 
 ---
 
-## Highlights
+## What makes this different
 
 - **Understands arbitrary natural language input** — interprets 10 categories of calendar intent with no hardcoded keywords, regex, or rules. "Push my workout back a bit", "move gym one hour later", and "shift my 10am forward by 60 minutes" all resolve to the same operation.
 - **Sub-second response time** for all local calendar operations
@@ -92,7 +92,7 @@ Python then validates the action and calls the correct function. This separation
 ### 1. Clone the repo
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/etavacoli/calendar-assistant.git
 cd calendar-assistant
 ```
 
@@ -125,6 +125,8 @@ python3 app.py
 ### 5. Run the tests
 
 ```bash
+python3 -m pytest test_calendar.py -v
+# or if pytest is on your PATH:
 pytest test_calendar.py -v
 ```
 
@@ -161,12 +163,6 @@ String-based time comparison only works correctly with zero-padded 24-hour forma
 
 ---
 
-## Future Improvements
+## What's next
 
-- Google Calendar / Apple Calendar sync
-- Web frontend (React)
-- Multi-user support with PostgreSQL
-- Recurring events
-- Timezone handling
-- Email or SMS alerts
-- Syllabus PDF import for students
+The immediate next step is a web frontend so this runs in a browser instead of a terminal. The storage layer is already designed to be swappable — moving from `events.json` to a real database only requires changing two functions. Google Calendar sync and multi-user support follow naturally from there.
